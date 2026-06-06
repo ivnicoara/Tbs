@@ -1,0 +1,417 @@
+export type MenuItem = {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  weight?: string;
+  tags?: string[];
+  popular?: boolean;
+};
+
+export type MenuCategory = {
+  id: string;
+  name: string;
+  emoji: string;
+  description: string;
+  items: MenuItem[];
+};
+
+export const menuCategories: MenuCategory[] = [
+  {
+    id: "pizza",
+    name: "Pizza",
+    emoji: "🍕",
+    description: "Pizza artizanală preparată după rețeta proprie — unică în Rădăuți",
+    items: [
+      {
+        id: 1,
+        name: "Margherita",
+        description: "Sos de roșii, mozzarella, busuioc proaspăt",
+        price: 35,
+        weight: "500g",
+        popular: true,
+      },
+      {
+        id: 2,
+        name: "Prosciutto",
+        description: "Sos de roșii, mozzarella, șuncă prager, oregano",
+        price: 42,
+        weight: "550g",
+        popular: true,
+      },
+      {
+        id: 3,
+        name: "4 Formaggi",
+        description: "Mozzarella, gorgonzola, parmigiana, emmental",
+        price: 48,
+        weight: "560g",
+      },
+      {
+        id: 4,
+        name: "Diavola",
+        description: "Sos de roșii, mozzarella, salam picant, ardei iute",
+        price: 44,
+        weight: "550g",
+        tags: ["picant"],
+      },
+      {
+        id: 5,
+        name: "Quattro Stagioni",
+        description: "Sos de roșii, mozzarella, șuncă, ciuperci, ardei, măsline",
+        price: 46,
+        weight: "580g",
+        popular: true,
+      },
+      {
+        id: 6,
+        name: "Capricciosa",
+        description: "Sos de roșii, mozzarella, șuncă, anghinare, ciuperci, măsline",
+        price: 47,
+        weight: "570g",
+      },
+      {
+        id: 7,
+        name: "Vegetariana",
+        description: "Sos de roșii, mozzarella, legume de sezon la grătar, pesto",
+        price: 40,
+        weight: "540g",
+        tags: ["vegetarian"],
+      },
+      {
+        id: 8,
+        name: "Pizza Gigant (0.5 mp)",
+        description: "Pizza monumentală din 4 arome la alegere — experiența supremă Thobass",
+        price: 180,
+        weight: "2.5kg",
+        popular: true,
+        tags: ["special"],
+      },
+    ],
+  },
+  {
+    id: "salate",
+    name: "Salate",
+    emoji: "🥗",
+    description: "Salate proaspete cu ingrediente atent selecționate",
+    items: [
+      {
+        id: 20,
+        name: "Salată Mix",
+        description: "Salată, rucola, spanac, roșii, castraveți, șuncă, ou, ardei, brânză, ceapă, măsline",
+        price: 28,
+        weight: "380g",
+        popular: true,
+      },
+      {
+        id: 21,
+        name: "Salată Italiană",
+        description: "Salată, rucola, spanac, roșii, castraveți, ton, ou, ardei, brânză, ceapă, măsline",
+        price: 32,
+        weight: "430g",
+      },
+      {
+        id: 22,
+        name: "Salată Grecească",
+        description: "Roșii, castravete, ardei, ceapă roșie, brânză feta, măsline Kalamata, oregano",
+        price: 30,
+        weight: "400g",
+        tags: ["vegetarian"],
+      },
+      {
+        id: 23,
+        name: "Salată Caesar",
+        description: "Salată romaine, piept de pui la grătar, parmezan, crutoane, sos Caesar",
+        price: 35,
+        weight: "420g",
+        popular: true,
+      },
+    ],
+  },
+  {
+    id: "ciorbe-supe",
+    name: "Ciorbe & Supe",
+    emoji: "🍲",
+    description: "Preparate calde tradiționale",
+    items: [
+      {
+        id: 30,
+        name: "Ciorbă de Burtă",
+        description: "Burtă de vită, smântână, usturoi, oțet",
+        price: 22,
+        weight: "400ml",
+        popular: true,
+      },
+      {
+        id: 31,
+        name: "Ciorbă Rădăuțeană",
+        description: "Ciorbă de pui cu smântână și usturoi, rețetă tradițională",
+        price: 22,
+        weight: "400ml",
+        popular: true,
+      },
+      {
+        id: 32,
+        name: "Supă de Găină",
+        description: "Supă clară cu tăiței, morcov, verdețuri",
+        price: 18,
+        weight: "400ml",
+      },
+      {
+        id: 33,
+        name: "Ciorbă de Legume",
+        description: "Legume de sezon, zdreanță de ou, leuștean",
+        price: 18,
+        weight: "400ml",
+        tags: ["vegetarian"],
+      },
+    ],
+  },
+  {
+    id: "preparate-principale",
+    name: "Preparate Principale",
+    emoji: "🍽️",
+    description: "Specialitățile noastre din bucătăria italiană, grecească și germană",
+    items: [
+      {
+        id: 40,
+        name: "Gyros de Pui",
+        description: "Carne de pui marinată, tzatziki, legume, lipie, cartofi prăjiți",
+        price: 38,
+        weight: "400g",
+        popular: true,
+      },
+      {
+        id: 41,
+        name: "Gyros de Porc",
+        description: "Carne de porc marinată cu condimente grecești, tzatziki, legume, lipie",
+        price: 42,
+        weight: "420g",
+      },
+      {
+        id: 42,
+        name: "Schnitzel Vienez",
+        description: "Cotlet de porc panat, cartofi prăjiți, salată de varză, lămâie",
+        price: 44,
+        weight: "450g",
+        popular: true,
+      },
+      {
+        id: 43,
+        name: "Piept de Pui la Grătar",
+        description: "Piept de pui cu herbs, garnitură la alegere, sos de roșii",
+        price: 40,
+        weight: "350g",
+      },
+      {
+        id: 44,
+        name: "Mici cu Muștar",
+        description: "Mici tradiționali din carne de vită și porc, muștar, pâine",
+        price: 32,
+        weight: "300g + pâine",
+        popular: true,
+      },
+      {
+        id: 45,
+        name: "Paste Carbonara",
+        description: "Spaghetti, bacon, ouă, parmezan, piper negru",
+        price: 36,
+        weight: "380g",
+      },
+      {
+        id: 46,
+        name: "Paste Bolognese",
+        description: "Spaghetti, sos de carne de vită, roșii, parmezan",
+        price: 38,
+        weight: "400g",
+        popular: true,
+      },
+    ],
+  },
+  {
+    id: "garnituri",
+    name: "Garnituri",
+    emoji: "🥔",
+    description: "Garnituri proaspete pentru preparatele principale",
+    items: [
+      {
+        id: 50,
+        name: "Cartofi Prăjiți",
+        description: "Cartofi prăjiți clasici, presărați cu sare și rozmarin",
+        price: 12,
+        weight: "200g",
+      },
+      {
+        id: 51,
+        name: "Cartofi Wedges",
+        description: "Cartofi tăiați gros cu condimente",
+        price: 14,
+        weight: "200g",
+      },
+      {
+        id: 52,
+        name: "Orez Pilaf",
+        description: "Orez cu legume și unt",
+        price: 10,
+        weight: "200g",
+      },
+      {
+        id: 53,
+        name: "Legume la Grătar",
+        description: "Dovlecel, ardei, vinete, ceapă, roșii cherry",
+        price: 16,
+        weight: "250g",
+        tags: ["vegetarian"],
+      },
+    ],
+  },
+  {
+    id: "desert",
+    name: "Deserturi",
+    emoji: "🍦",
+    description: "Înghețată naturală preparată de boss alături de fiul său Mihai",
+    items: [
+      {
+        id: 60,
+        name: "Înghețată Naturală — Vanilie",
+        description: "Înghețată artizanală cu extract natural de vanilie Madagascar",
+        price: 8,
+        weight: "100g",
+        popular: true,
+      },
+      {
+        id: 61,
+        name: "Înghețată Naturală — Ciocolată",
+        description: "Înghețată artizanală cu cacao belgiana",
+        price: 8,
+        weight: "100g",
+        popular: true,
+      },
+      {
+        id: 62,
+        name: "Înghețată Naturală — Fructe de Pădure",
+        description: "Înghețată artizanală cu fructe de pădure proaspete",
+        price: 9,
+        weight: "100g",
+      },
+      {
+        id: 63,
+        name: "Cupă cu 3 Arome",
+        description: "3 bile de înghețată naturală la alegere, frișcă, sos de ciocolată",
+        price: 22,
+        weight: "300g",
+        popular: true,
+      },
+      {
+        id: 64,
+        name: "Tiramisu",
+        description: "Tiramisu clasic italian cu mascarpone, espresso, pișcoturi",
+        price: 20,
+        weight: "200g",
+      },
+      {
+        id: 65,
+        name: "Papanași",
+        description: "Papanași tradiționali cu smântână și dulceață de vișine",
+        price: 18,
+        weight: "250g",
+        popular: true,
+      },
+    ],
+  },
+  {
+    id: "bauturi",
+    name: "Băuturi",
+    emoji: "🍺",
+    description: "Cea mai mare gamă de bere din Rădăuți — inclusiv bere la cizmă!",
+    items: [
+      {
+        id: 70,
+        name: "Bere la Draft (0.5L)",
+        description: "Bere proaspătă la halba, rotație săptămânală",
+        price: 12,
+        weight: "500ml",
+        popular: true,
+      },
+      {
+        id: 71,
+        name: "Bere la Cizmă (2L)",
+        description: "Experiența unică — bere servită la cizmă de sticlă. O amintire de neuitat!",
+        price: 55,
+        weight: "2L",
+        popular: true,
+        tags: ["special"],
+      },
+      {
+        id: 72,
+        name: "Vin Alb / Roșu (250ml)",
+        description: "Vin de casă din podgoriile Moldovei",
+        price: 14,
+        weight: "250ml",
+      },
+      {
+        id: 73,
+        name: "Limonadă Artizanală",
+        description: "Limonadă preparată cu citrice proaspete și mentă",
+        price: 12,
+        weight: "400ml",
+        popular: true,
+      },
+      {
+        id: 74,
+        name: "Sucuri Naturale",
+        description: "Portocale, mere, morcov — stoarse la minut",
+        price: 14,
+        weight: "300ml",
+      },
+      {
+        id: 75,
+        name: "Apă Minerală",
+        description: "Dorna 0.5L sau 1.5L",
+        price: 7,
+        weight: "500ml",
+      },
+      {
+        id: 76,
+        name: "Cafea Espresso",
+        description: "Espresso Italian 100% Arabica",
+        price: 8,
+        weight: "30ml",
+      },
+      {
+        id: 77,
+        name: "Cafea Cappuccino",
+        description: "Espresso cu lapte spumat și aromă de vanilie",
+        price: 12,
+        weight: "180ml",
+      },
+    ],
+  },
+];
+
+export const restaurantInfo = {
+  name: "Thobass&Co",
+  tagline: "Gustos, sănătos și rapid",
+  description:
+    "Unul dintre cele mai vechi restaurante din Rădăuți, situat în zona centrală a orașului, lângă sinagoga evreiască. De peste 15 ani servim clienții noștri cu produse de calitate la prețuri accesibile.",
+  address: "Strada 1 Mai, Nr. 2, 725400 Rădăuți, Suceava",
+  phone: ["0230 564 001", "0758 244 640"],
+  email: "contact@thobass.co",
+  hours: {
+    weekdays: "10:00 – 22:30",
+    weekend: "10:00 – 23:00",
+  },
+  social: {
+    instagram: "https://www.instagram.com/thobassco/",
+    facebook: "https://www.facebook.com/thobassco/",
+  },
+  features: [
+    "Livrare la domiciliu",
+    "Take-away",
+    "Terasă",
+    "Wi-Fi gratuit",
+    "Rezervări",
+    "Acces persoane cu dizabilități",
+    "Parcare",
+    "Plată cu cardul",
+  ],
+};

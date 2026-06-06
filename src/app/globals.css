@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f0d0a;
+  --foreground: #f5f0e8;
+  --primary: #c9a84c;
+  --primary-dark: #a8832d;
+  --secondary: #1a1612;
+  --accent: #e8d5a3;
+  --muted: #6b5a3e;
+  --card: #1a1612;
+  --border: #2d2318;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Georgia', serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0d0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a84c;
+  border-radius: 3px;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #c9a84c, #f5e6a3, #c9a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+}
